@@ -1,0 +1,262 @@
+---
+title: "Bài tập & Đề kiểm tra"
+description: "Tạo bài tập từ bộ câu hỏi, giao cho lớp, đặt hạn nộp, chấm điểm và công bố kết quả — hướng dẫn từng bước có ảnh minh hoạ."
+---
+
+**Bài tập & Đề KT** là nơi giáo viên tạo và quản lý các bài tập hoặc đề kiểm
+tra giao cho lớp. Trang được thiết kế theo luồng *tạo → giao → theo dõi →
+chấm → công bố*.
+
+## 1. Màn hình danh sách
+
+Khi mở mục **Bài tập & Đề kiểm tra** từ menu trái, bạn sẽ thấy toàn bộ bài đã
+tạo, kèm trạng thái, lớp, môn, số bài nộp, và hạn nộp.
+
+<Frame caption="Danh sách bài tập và đề kiểm tra">
+  <img src="/images/teacher-guide/assignments/01-list.png" alt="Danh sách bài tập" />
+</Frame>
+
+Có ba bộ lọc nhanh ở đầu trang:
+
+- **Tất cả / Bài tập / Đề kiểm tra** — lọc theo loại.
+- **Trạng thái** — Nháp, Đã phát, Đã đóng, Đã chấm.
+- **Ô tìm kiếm** — gõ tên bài tập.
+
+Mỗi dòng có các thao tác: **Xem chi tiết**, **Xem danh sách nộp bài**, **Đóng**
+(với bài đang phát), **Xóa**.
+
+Bấm nút **Thêm mới** ở góc phải để bắt đầu tạo bài mới — hệ thống mở một wizard
+5 bước.
+
+## 2. Wizard tạo bài tập (5 bước)
+
+### Bước 1 — Thông tin
+
+<Frame caption="Bước 1: khai báo thông tin chung">
+  <img src="/images/teacher-guide/assignments/02-builder-step1.png" alt="Bước 1 — Thông tin" />
+</Frame>
+
+Khai báo các trường bắt buộc (`*`):
+
+| Trường | Mô tả |
+|--------|-------|
+| **Loại** | *Bài kiểm tra* hoặc *Bài tập* — quyết định bài có thời lượng & một lần làm, hay luyện tập nhiều lần |
+| **Tiêu đề** | Tên hiển thị cho học sinh, ví dụ *Kiểm tra 1 tiết — Chương 5 Đại số* |
+| **Mô tả** | Mô tả ngắn xuất hiện khi học sinh mở bài |
+| **Loại đề** | Kiểm tra 15 phút / 1 tiết / Giữa kỳ / Cuối kỳ |
+| **Môn học** | Chọn từ danh sách môn bạn đã khai báo |
+| **Khối lớp** | Mặc định theo lớp được giao |
+| **Ngày thi** | Mốc thời gian dự kiến |
+| **Thời gian** | 15 / 45 / 60 / 90 / 120 phút |
+| **Giao cho lớp** | Bấm các pill lớp để chọn — có thể chọn nhiều lớp |
+
+<Tip>
+  Bạn có thể chọn nhiều lớp cùng lúc — học sinh ở cả các lớp đó đều thấy bài
+  tập trong app của mình.
+</Tip>
+
+### Bước 2 — Cấu trúc & Cấu hình
+
+<Frame caption="Bước 2: cấu trúc đề và cấu hình làm bài">
+  <img src="/images/teacher-guide/assignments/03-builder-step2.png" alt="Bước 2 — Cấu trúc & Cấu hình" />
+</Frame>
+
+Hai phần:
+
+**Cấu trúc đề thi** — chia đề thành nhiều "Phần" với số điểm khác nhau:
+
+- Mặc định có *Phần I: Trắc nghiệm (3đ)* và *Phần II: Tự luận (7đ)*. Tổng phải
+  bằng tổng điểm (10 hoặc 100).
+- Mỗi phần khai báo **Loại phần**: *Câu hỏi độc lập*, *Đọc hiểu*, *Nghe hiểu*.
+- Bấm **Thêm phần mới** nếu cần nhiều hơn 2 phần (ví dụ tách Đọc hiểu riêng).
+
+**Cấu hình đề thi** — các tuỳ chọn khi học sinh làm bài:
+
+| Cấu hình | Ý nghĩa |
+|----------|---------|
+| Xáo trộn câu hỏi | Thứ tự câu ngẫu nhiên cho mỗi HS |
+| Xáo trộn đáp án | Thứ tự đáp án trắc nghiệm ngẫu nhiên |
+| Hiện điểm sau khi nộp | HS thấy điểm ngay (chỉ áp dụng khi không có câu tự luận chờ chấm) |
+| Hiện đáp án đúng sau khi nộp | HS thấy đáp án — cần bật cùng *Hiện điểm sau khi nộp* |
+| Chặn chuyển tab | Cảnh báo khi HS chuyển sang tab khác |
+| Chế độ toàn màn hình | Bắt buộc làm bài ở fullscreen |
+| Tự động chấm câu trắc nghiệm | Câu khách quan chấm tự động |
+| Cho phép làm lại | *Không* / *1 lần* / *Không giới hạn* |
+| Điểm đạt | Ngưỡng tối thiểu để học sinh "đạt" bài |
+
+<Warning>
+  Bật **Chặn chuyển tab** + **Chế độ toàn màn hình** cho các bài kiểm tra
+  chính thức để hạn chế gian lận. Với bài luyện tập thì không cần.
+</Warning>
+
+### Bước 3 — Ma trận đề
+
+<Frame caption="Bước 3: ma trận phân bổ câu hỏi">
+  <img src="/images/teacher-guide/assignments/04-builder-step3.png" alt="Bước 3 — Ma trận đề" />
+</Frame>
+
+<Warning>
+  **Lưu ý:** Để sử dụng tính năng ma trận đề thi, giáo viên phải có **bộ câu
+  hỏi** sẵn trong hệ thống. Nếu chưa có, hãy xem cách soạn
+  [câu hỏi](/teacher-guide/questions) và gom thành
+  [bộ câu hỏi](/teacher-guide/question-sets) trước khi quay lại bước này.
+</Warning>
+
+Đây là bước phân bổ câu hỏi theo **chủ đề × mức độ nhận thức**. Bốn mức độ
+chuẩn:
+
+- **Nhận biết**
+- **Thông hiểu**
+- **Vận dụng**
+- **Vận dụng cao**
+
+Với mỗi chủ đề (chương/tuần), khai báo số câu và số điểm cho từng mức ở từng
+phần. Hệ thống sẽ tự bốc câu hỏi ngẫu nhiên từ bộ câu hỏi đã chọn đúng theo ma
+trận này.
+
+<Steps>
+  <Step title="Bấm 'Chưa chọn bộ câu hỏi'">
+    Mở modal duyệt cây thư mục bộ câu hỏi.
+  </Step>
+  <Step title="Chọn bộ câu hỏi">
+    Tick vào các bộ phù hợp với chủ đề.
+    <Frame caption="Modal chọn bộ câu hỏi từ cây thư mục">
+      <img src="/images/teacher-guide/assignments/04b-pick-question-set.png" alt="Chọn bộ câu hỏi" />
+    </Frame>
+  </Step>
+  <Step title="Khai báo số câu & điểm">
+    Điền số lượng câu hỏi và điểm cho từng ô. Tổng điểm mỗi phần không được
+    vượt quá điểm tối đa (ô sẽ đỏ nếu vượt).
+  </Step>
+  <Step title="Thêm chủ đề (tuỳ chọn)">
+    Bấm **Thêm chủ đề** để chia đề theo nhiều chương khác nhau.
+  </Step>
+</Steps>
+
+<Tip>
+  Các loại câu hỏi bị **gạch ngang** sẽ không được dùng khi hệ thống tự bốc câu.
+  Bấm vào tên loại để bật/tắt.
+</Tip>
+
+### Bước 4 — Chọn câu hỏi
+
+<Frame caption="Bước 4: xem & điều chỉnh câu hỏi được chọn">
+  <img src="/images/teacher-guide/assignments/05-builder-step4.png" alt="Bước 4 — Chọn câu hỏi" />
+</Frame>
+
+Sau khi ma trận đã hợp lệ, hệ thống tự chọn câu hỏi từ bộ. Ở bước này bạn có
+thể:
+
+- Xem trước từng câu đã được chọn.
+- **Thay** một câu bằng câu khác cùng mức độ.
+- **Đổi thứ tự** câu hỏi.
+- Khoá những câu bắt buộc xuất hiện (sẽ không bị bốc lại khi sinh đề biến thể).
+
+### Bước 5 — Xem trước & Phát hành
+
+Bước cuối là xem bản hoàn chỉnh giống như học sinh sẽ nhìn thấy. Có hai lựa
+chọn:
+
+- **Lưu nháp** — bài chưa phát hành, học sinh không thấy. Bạn quay lại chỉnh
+  sau.
+- **Phát hành** — bài chuyển sang trạng thái *Đã phát*, học sinh trong các lớp
+  đã giao bắt đầu nhìn thấy bài tập.
+
+## 3. Trang chi tiết bài tập
+
+Từ danh sách, bấm **Xem chi tiết** trên một bài tập đã có.
+
+<Frame caption="Trang chi tiết bài tập">
+  <img src="/images/teacher-guide/assignments/07-detail.png" alt="Chi tiết bài tập" />
+</Frame>
+
+Trang chi tiết hiển thị:
+
+- Thông tin chung (môn, lớp, loại, hạn nộp).
+- Cấu trúc đề (các phần và câu hỏi).
+- Cấu hình làm bài.
+- Các nút thao tác: **Chỉnh sửa**, **Đóng**, **In đề**, **Xem nộp bài**.
+
+## 4. Danh sách nộp bài
+
+Bấm **Xem danh sách nộp bài** (hoặc đi từ trang chi tiết) để mở dashboard nộp
+bài của một bài tập.
+
+<Frame caption="Danh sách nộp bài + chi tiết một học sinh">
+  <img src="/images/teacher-guide/assignments/08-submissions.png" alt="Danh sách nộp bài" />
+</Frame>
+
+Đầu trang là 4 KPI: **Tổng học sinh / Đã nộp / Đang làm / Đã chấm**, kèm lọc
+nhanh theo trạng thái.
+
+Cột trái là danh sách học sinh — mỗi học sinh hiển thị:
+- Số lần làm bài (với bài cho phép làm lại).
+- Điểm cao nhất.
+- Giờ nộp lần gần nhất.
+
+Bấm vào tên học sinh → cột phải hiện chi tiết các lần làm. Bấm **Xem bài** ở
+một lần làm cụ thể để mở màn hình chấm.
+
+Khi đã chấm xong toàn bộ, bấm **Công bố điểm** ở góc phải trên để học sinh
+nhìn thấy điểm trong app của các em.
+
+## 5. Chấm bài
+
+<Frame caption="Modal chấm bài: panel câu, nội dung câu, panel điểm">
+  <img src="/images/teacher-guide/assignments/09-grading.png" alt="Chấm bài" />
+</Frame>
+
+Màn hình chấm gồm 3 vùng:
+
+**Panel trái — Danh sách câu**
+- Số câu kèm trạng thái màu: <code>Đúng</code> (xanh) / <code>Một phần</code> /
+  <code>Sai</code> (đỏ) / <code>Chờ chấm</code> (vàng — câu tự luận chưa chấm).
+- Bấm số câu để nhảy đến câu đó.
+- Lọc nhanh: **Tất cả** / **Cần xem** (chỉ câu cần giáo viên chấm tay).
+
+**Panel giữa — Nội dung câu**
+- Đề bài, loại câu, mức độ, điểm tối đa.
+- **Học sinh ghép** / **Học sinh trả lời** — đáp án thực tế.
+- **Đáp án đúng** — so sánh đối chiếu.
+
+**Panel phải — Cho điểm**
+- Tổng điểm hiện tại.
+- Nút **Đúng / Sai** (chấm nhanh câu trắc nghiệm).
+- Ô **Nhận xét cho học sinh** (HS sẽ đọc được).
+- **Lưu & kết thúc** — lưu điểm và đóng modal.
+- **Lưu và quay lại danh sách** — về cột danh sách HS.
+
+<Tip>
+  Câu trắc nghiệm đã được hệ thống chấm tự động — giáo viên chỉ cần tập trung
+  vào các câu **Chờ chấm** (lọc *Cần xem* để ẩn các câu đã đúng).
+</Tip>
+
+## Trạng thái bài tập
+
+| Trạng thái | Ý nghĩa |
+|------------|---------|
+| **Nháp** | Chưa phát hành, học sinh không nhìn thấy |
+| **Đã phát** | Học sinh đang làm được |
+| **Đã đóng** | Quá hạn / giáo viên đóng thủ công, học sinh không nộp được nữa |
+| **Đã chấm** | Toàn bộ bài đã chấm xong và đã công bố điểm |
+
+## Mẹo nhanh
+
+<CardGroup cols={2}>
+  <Card title="Tách bài luyện và bài kiểm tra" icon="lightbulb">
+    Bài luyện tập: cho phép làm lại không giới hạn, hiện đáp án sau khi nộp.
+    Bài kiểm tra: 1 lần, bật chống gian lận, ẩn đáp án.
+  </Card>
+  <Card title="Dùng ma trận để chia đều" icon="grid">
+    Ma trận đảm bảo đề thi cân bằng giữa Nhận biết – Thông hiểu – Vận dụng,
+    không thiên về một mức quá nhiều.
+  </Card>
+  <Card title="Công bố điểm theo lô" icon="megaphone">
+    Chấm xong toàn bộ rồi mới **Công bố điểm** một lần — tránh tình trạng học
+    sinh nộp sớm thấy điểm trước, mách bạn chưa nộp.
+  </Card>
+  <Card title="Sao chép đề cũ" icon="copy">
+    Với các đề kiểm tra định kỳ, sao chép đề cũ rồi đổi vài câu thay vì tạo
+    mới — tiết kiệm thời gian khai báo lại cấu hình.
+  </Card>
+</CardGroup>

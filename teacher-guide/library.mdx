@@ -1,0 +1,159 @@
+---
+title: "Thư viện"
+description: "Kho tài nguyên giảng dạy theo môn — file PDF, ảnh, video, slide, audio. Cũng là nơi tổ chức cây thư mục dùng chung cho Bộ câu hỏi và Bài tập."
+---
+
+**Thư viện** không chỉ là kho file: đây là **cây thư mục theo môn học** mà toàn
+bộ hệ thống (Bộ câu hỏi, Bài tập, Câu hỏi…) sẽ dùng để sắp xếp và tìm lại nội
+dung. Mỗi tài liệu giáo viên tải lên đều nằm trong một thư mục, và mỗi thư mục
+luôn thuộc một môn học cụ thể.
+
+<Frame caption="Thư viện ở chế độ xem gốc — 4 thư mục gốc tương ứng 4 môn">
+  <img src="/images/teacher-guide/library/01-root.png" alt="Thư viện root" />
+</Frame>
+
+## Cấu trúc cây thư mục
+
+Thư viện có **2 cấp** quan trọng cần phân biệt:
+
+| Loại thư mục | Đặc điểm | Ví dụ |
+|--------------|----------|-------|
+| **Thư mục gốc** | Nằm ở cấp ngoài cùng, **bắt buộc gắn 1 môn học**. Mỗi môn chỉ có **1 thư mục gốc** duy nhất. | *Tiếng Việt*, *Toán học*, *Khoa học*, *Lịch sử và Địa lí* |
+| **Thư mục con** | Nằm bên trong thư mục gốc (hoặc con khác). Kế thừa môn từ gốc. Tự do tổ chức theo chương / tuần / chủ đề. | *Tuần 01*, *Bài 09. Luyện tập chung*, *02_Danh từ* |
+
+<Note>
+  **Folder gốc đến từ đâu?** Khi bạn vào mục [Môn học](/teacher-guide/subjects)
+  và chọn các môn mình dạy, hệ thống **chưa** tự tạo thư mục gốc. Bạn cần vào
+  **Thư viện** rồi bấm **+ Tạo thư mục** lần đầu — modal sẽ yêu cầu chọn môn
+  học và đặt tên cho thư mục gốc. Mỗi môn chỉ tạo được **một** thư mục gốc;
+  bấm tạo lần thứ hai cho cùng môn sẽ báo lỗi *"Đã có thư mục gốc cho môn học
+  này"*.
+</Note>
+
+## Thư viện dùng để làm gì?
+
+<CardGroup cols={2}>
+  <Card title="Lưu tài nguyên giảng dạy" icon="file">
+    PDF bài giảng, ảnh minh hoạ, video, audio (luyện nghe Tiếng Anh), slide
+    PowerPoint, đề thi mẫu...
+  </Card>
+  <Card title="Tổ chức theo chương/tuần" icon="folder-tree">
+    Cây thư mục con cho phép chia theo chương trình học (Tuần 01, Bài 09…) để
+    dễ tìm khi cần.
+  </Card>
+  <Card title="Đính kèm vào câu hỏi" icon="paperclip">
+    Khi soạn câu hỏi (ví dụ câu nghe), bạn chọn audio từ Thư viện thay vì tải
+    lên lại.
+  </Card>
+  <Card title="Gắn nhãn cho Bộ câu hỏi" icon="bookmark">
+    Mỗi **Bộ câu hỏi** chọn một thư mục để lưu — sau này tìm trong cây thư mục
+    sẽ thấy ngay các bộ liên quan.
+  </Card>
+</CardGroup>
+
+## Tạo thư mục gốc
+
+<Steps>
+  <Step title="Mở Thư viện">
+    Vào menu **Tài nguyên → Thư viện**.
+  </Step>
+  <Step title="Bấm + Tạo thư mục">
+    Nút ở góc phải trên (hoặc nút **Tạo thư mục** ở cột trái).
+  </Step>
+  <Step title="Chọn môn học">
+    <Frame caption="Modal Tạo thư mục mới — thư mục gốc bắt buộc gắn môn">
+      <img src="/images/teacher-guide/library/02-create-root-folder.png" alt="Tạo thư mục mới" />
+    </Frame>
+
+    Chọn môn từ dropdown — chỉ hiện các môn bạn đã khai báo dạy ở [Môn học](/teacher-guide/subjects).
+  </Step>
+  <Step title="Đặt tên & Tạo">
+    Tên gợi ý là chính tên môn (*Tiếng Việt*, *Toán học*…) để dễ nhận. Bấm
+    **Tạo**.
+  </Step>
+</Steps>
+
+<Warning>
+  Nếu môn đó đã có thư mục gốc, dropdown vẫn cho chọn nhưng khi bấm **Tạo** sẽ
+  báo *"Đã có thư mục gốc cho môn học này"*. Hãy chọn môn khác hoặc tạo
+  **thư mục con** bên trong gốc hiện có.
+</Warning>
+
+## Tạo thư mục con
+
+Khi đã có thư mục gốc, bấm vào nó để vào trong, rồi bấm **+ Tạo thư mục** một
+lần nữa. Lần này modal **không hỏi môn** — thư mục con tự kế thừa môn của
+gốc.
+
+Cấu trúc thường gặp:
+
+```
+Tiếng Việt (gốc, gắn môn = Tiếng Việt)
+├── Tuần 01
+│   ├── Bài giảng.pdf
+│   └── Audio luyện nghe.mp3
+├── Tuần 02
+├── Tuần 03_Tập đọc 1_Thằn lằn xanh và tắc kè
+└── Tuần 33. Chủ điểm Vì một thế giới bình yên
+```
+
+## Nội dung trong một thư mục
+
+Khi mở một thư mục (bấm vào tên), bạn thấy:
+
+<Frame caption="Nội dung trong một thư mục con">
+  <img src="/images/teacher-guide/library/03-folder-content.png" alt="Folder content" />
+</Frame>
+
+- **Tài liệu** (resources) đang có trong thư mục.
+- Các **thư mục con** (nếu có).
+- Thanh công cụ: **Sắp xếp**, **Chọn hàng loạt**, **Chế độ xem** (lưới/danh
+  sách), **Hiện xem trước**.
+
+## Tải lên tài liệu
+
+<Steps>
+  <Step title="Vào đúng thư mục">
+    Điều hướng đến thư mục con muốn lưu file (ví dụ *Tuần 01*).
+  </Step>
+  <Step title="Kéo-thả hoặc Tải lên">
+    Kéo file từ máy tính vào vùng nội dung, hoặc bấm nút **+ Tải lên** (nếu
+    có).
+
+    Hỗ trợ: PDF, DOCX, PPTX, hình ảnh (JPG/PNG), video MP4, audio MP3, và các
+    định dạng tài liệu phổ biến.
+  </Step>
+  <Step title="Chờ tải xong">
+    Dung lượng đã dùng / tổng dung lượng hiển thị ở cột trái (ví dụ *0 MB /
+    100 MB* cho gói Free).
+  </Step>
+</Steps>
+
+## Tìm kiếm
+
+- **Ô tìm thư mục** (cột trái) — tìm nhanh tên thư mục trong cây.
+- **Ô tìm kiếm** (giữa) — tìm tài liệu trong thư mục hiện tại.
+- Khi cây thư mục lớn, dùng tìm kiếm thay vì cuộn tay.
+
+## Dung lượng
+
+Hiển thị ở cuối cột trái: **Dung lượng đã dùng / tổng dung lượng** của gói cước.
+Khi sắp đầy, bạn cần:
+
+- Xoá các file không dùng tới.
+- Nâng cấp gói tại [Gói cước](/teacher-guide/subscriptions).
+
+## Liên kết với các tính năng khác
+
+| Tính năng | Cách dùng Thư viện |
+|-----------|--------------------|
+| [Câu hỏi](/teacher-guide/questions) | Đính kèm hình/audio cho đề câu hỏi |
+| [Bộ câu hỏi](/teacher-guide/question-sets) | Khai báo *Thư mục quản lý* khi tạo bộ → bộ sẽ nằm trong cây thư mục |
+| [Bài tập](/teacher-guide/assignments) | Đính kèm tài liệu tham khảo cho học sinh tải về |
+| Phiên trực tiếp | Trình chiếu slide từ Thư viện trên màn hình lớp |
+
+<Tip>
+  Khi nội dung trong Thư viện đã được tổ chức tốt theo cây thư mục, mọi luồng
+  giảng dạy khác (soạn câu hỏi → tạo bộ → giao bài tập) đều **chọn lại đúng
+  nhánh** rất nhanh thay vì phải tìm bằng tên.
+</Tip>
