@@ -40,7 +40,8 @@
           {
             "group": "Kiểm tra",
             "pages": [
-              "teacher-guide/assignments"
+              "teacher-guide/assignments",
+              "teacher-guide/grading"
             ]
           },
           {

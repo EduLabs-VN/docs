@@ -1,0 +1,168 @@
+---
+title: "Chấm bài"
+description: "Luồng chấm bài: từ danh sách nộp → xem bài làm → chấm từng câu → công bố điểm cho học sinh."
+---
+
+**Chấm bài** là bước sau khi học sinh nộp bài. Edulabs **tự động chấm các câu
+trắc nghiệm khách quan** (Trắc nghiệm, Đúng/Sai, Điền khuyết khớp chuỗi, Ghép
+đôi, Sắp xếp…) ngay khi học sinh bấm Nộp. Giáo viên chỉ cần:
+
+1. Kiểm tra lại các câu đã chấm tự động (nếu cần ghi đè).
+2. **Chấm thủ công** các câu **Tự luận** (hệ thống không thể chấm thay).
+3. Viết **nhận xét chung** cho học sinh.
+4. **Công bố điểm** để học sinh thấy kết quả trong app.
+
+## 1. Vào danh sách nộp bài
+
+Từ trang [Bài tập & Đề kiểm tra](/teacher-guide/assignments), bấm **Xem danh
+sách nộp bài** trên một bài đã có học sinh nộp.
+
+<Frame caption="Danh sách nộp bài — cột trái là học sinh, cột phải là chi tiết một học sinh">
+  <img src="/images/teacher-guide/grading/01-submissions-list.png" alt="Danh sách nộp bài" />
+</Frame>
+
+Đầu trang có 4 KPI và bộ lọc trạng thái:
+
+| KPI | Ý nghĩa |
+|-----|---------|
+| **Tổng học sinh** | Số HS trong các lớp được giao bài |
+| **Đã nộp** | Đã ấn Nộp nhưng giáo viên có thể chưa chấm xong |
+| **Đang làm** | Đang trong phiên làm bài (chưa nộp) |
+| **Đã chấm** | Tất cả câu đã có điểm — sẵn sàng công bố |
+
+Cột trái liệt kê toàn bộ học sinh kèm:
+- Trạng thái (*Đã chấm* / *Chưa làm*).
+- Số lần làm bài (với bài cho phép làm lại).
+- Điểm cao nhất.
+- Giờ nộp lần gần nhất.
+
+Bấm vào tên một học sinh → cột phải hiện **lịch sử làm bài** với điểm từng
+lần. Mỗi lần làm có nút **Xem bài** để mở modal chấm.
+
+## 2. Modal chấm bài
+
+Modal "Xem bài" có ba vùng chính:
+
+<Frame caption="Modal chấm bài — câu trắc nghiệm đã chấm đúng">
+  <img src="/images/teacher-guide/grading/02-review-correct.png" alt="Câu trắc nghiệm đúng" />
+</Frame>
+
+### Vùng trái — Danh sách câu
+
+Đầu cột là 4 chip màu phân loại:
+- <code>Đúng</code> (xanh lá) — Đã chấm đúng.
+- <code>Một phần</code> (vàng) — Đúng một phần (Ghép đôi, Sắp xếp…).
+- <code>Sai</code> (đỏ) — Đã chấm sai.
+- <code>Chờ chấm</code> (vàng nhạt) — Câu tự luận chưa được giáo viên chấm.
+
+Hai nút **Dạng lưới** / **Dạng danh sách** đổi cách hiển thị. Lọc nhanh
+**Tất cả** / **Cần xem** giúp ẩn các câu đã đúng để tập trung vào câu cần
+chấm thủ công.
+
+<Frame caption="Dạng danh sách hiển thị nhiều thông tin hơn">
+  <img src="/images/teacher-guide/grading/05-list-view.png" alt="Dạng danh sách" />
+</Frame>
+
+### Vùng giữa — Nội dung câu
+
+Hiển thị:
+- **Câu số / Loại câu / Mức độ** (Nhận biết / Thông hiểu / Vận dụng / Vận
+  dụng cao).
+- **Điểm hiện tại / Điểm tối đa** của câu.
+- **Đề bài**.
+- **Đáp án đúng** (đánh dấu `✓ Đáp án đúng`) và **HS chọn** (nếu khác).
+
+Câu **trắc nghiệm**: hiển thị 4 phương án A/B/C/D, đánh dấu đáp án đúng và
+lựa chọn của học sinh.
+
+<Frame caption="Câu trắc nghiệm sai — học sinh chọn B, đáp án đúng là A">
+  <img src="/images/teacher-guide/grading/03-review-wrong.png" alt="Câu trắc nghiệm sai" />
+</Frame>
+
+Câu **Điền khuyết** / **Ghép đôi**: hiển thị nhiều ô trống `[1]`, `[2]`...
+và cả 4 phương án để so sánh.
+
+<Frame caption="Câu Điền khuyết — học sinh chọn C, đáp án đúng là A">
+  <img src="/images/teacher-guide/grading/04-review-fill-in.png" alt="Câu Điền khuyết" />
+</Frame>
+
+### Vùng phải — Cho điểm & Nhận xét
+
+- **Avatar và tên học sinh** + **Điểm tổng kết** hiện tại (8.5 / 10).
+- Nút **Đúng / Sai** để chấm nhanh câu trắc nghiệm (ghi đè kết quả tự động).
+- Ô **Nhận xét cho học sinh** — học sinh sẽ đọc được khi xem lại bài.
+- Hai nút lưu:
+  - **Lưu & kết thúc** — lưu điểm câu hiện tại rồi đóng modal.
+  - **Lưu và quay lại danh sách** — lưu rồi về cột danh sách HS.
+
+<Tip>
+  **Câu tự luận** không có nút Đúng/Sai cố định — thay vào đó là **rubric** (
+  bảng tiêu chí) với điểm từng tiêu chí. Hệ thống có thể đã chấm sơ bộ bằng
+  AI; bạn chỉ cần điều chỉnh điểm từng tiêu chí nếu thấy chưa hợp lý.
+</Tip>
+
+## 3. Mẹo chấm nhanh
+
+<Steps>
+  <Step title="Bật bộ lọc 'Cần xem'">
+    Ẩn hết các câu đã đúng để chỉ thấy câu cần can thiệp (sai hoặc tự luận
+    chờ chấm).
+  </Step>
+  <Step title="Câu trắc nghiệm — chỉ xem lướt">
+    Hệ thống đã chấm tự động. Bạn chỉ ghi đè khi thấy câu có lỗi (ví dụ đề ra
+    chấm sai do đáp án có biến thể).
+  </Step>
+  <Step title="Câu tự luận — đọc kỹ rubric">
+    Điều chỉnh điểm từng tiêu chí trong rubric. Có thể dùng **gợi ý AI** làm
+    nháp cho nhận xét, sau đó tinh chỉnh.
+  </Step>
+  <Step title="Viết nhận xét chung">
+    Vài câu khen + 1-2 điểm cần cải thiện. Học sinh sẽ thấy nhận xét này khi
+    mở bài đã chấm trong app học sinh.
+  </Step>
+  <Step title="Lưu & sang học sinh kế">
+    Bấm **Lưu và quay lại danh sách** rồi chọn học sinh tiếp theo, hoặc đóng
+    modal và chọn từ cột trái.
+  </Step>
+</Steps>
+
+## 4. Công bố điểm
+
+Khi đã chấm xong toàn bộ học sinh, bấm **Công bố điểm** ở góc phải trên trang
+danh sách nộp bài.
+
+<Frame caption="Hộp thoại xác nhận công bố điểm">
+  <img src="/images/teacher-guide/grading/06-publish-dialog.png" alt="Công bố điểm" />
+</Frame>
+
+Sau khi công bố:
+- **Học sinh** mở app và thấy điểm của mình.
+- Học sinh được phép xem lại bài làm, đáp án đúng, và nhận xét giáo viên.
+- **Phụ huynh** (nếu đã liên kết) nhận thông báo điểm con.
+
+<Warning>
+  Đã công bố thì học sinh có thể nhìn thấy ngay. Nếu cần sửa, bạn vẫn có thể
+  vào lại từng học sinh, sửa điểm, rồi bấm Công bố lại — nhưng đã công bố
+  một lần thì học sinh đã thấy con số trước đó. Hãy chấm xong hết rồi mới
+  công bố một lần.
+</Warning>
+
+## Trạng thái chi tiết của một câu
+
+| Trạng thái | Khi nào xuất hiện |
+|------------|-------------------|
+| **Đúng** | Trắc nghiệm khớp đáp án, Điền khuyết khớp chuỗi, Ghép đôi/Sắp xếp đúng hết |
+| **Một phần** | Ghép đôi/Sắp xếp đúng một phần (theo % vị trí đúng) |
+| **Sai** | Trắc nghiệm sai, Điền khuyết không khớp |
+| **Chờ chấm** | Câu Tự luận — chỉ giáo viên chấm được, hoặc AI gợi ý chưa được giáo viên xác nhận |
+
+## Liên kết
+
+<CardGroup cols={2}>
+  <Card title="Tạo bài tập" href="/teacher-guide/assignments" icon="clipboard-list">
+    Bước trước: tạo đề và giao cho lớp.
+  </Card>
+  <Card title="Ngân hàng câu hỏi" href="/teacher-guide/questions" icon="circle-question">
+    Câu hỏi tự luận có rubric tiêu chí sẽ giúp chấm nhanh hơn.
+  </Card>
+</CardGroup>
